@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            lbl1 = new Label();
+            SuspendLayout();
+            // 
+            // lbl1
+            // 
+            lbl1.AutoSize = true;
+            lbl1.Location = new Point(73, 40);
+            lbl1.Name = "lbl1";
+            lbl1.Size = new Size(13, 15);
+            lbl1.TabIndex = 0;
+            lbl1.Text = "1";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(lbl1);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Receitas";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lbl1;
     }
 }
