@@ -11,7 +11,7 @@ namespace AppReceitas
         {
             try
             {
-                const string servidor = "Local instance SQL80";
+                const string servidor = "Local instance MySQL80";
                 const string db = "dbReceitas";
                 const string usuario = "root";
                 const string senha = "123456";
