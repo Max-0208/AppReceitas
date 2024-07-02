@@ -7,23 +7,38 @@ namespace AppReceitas
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                const string servidor = "Local instance MySQL80";
-                const string db = "dbReceitas";
-                const string usuario = "root";
-                const string senha = "123456";
+                if (!txtReceita.Text.Equals("") && !txtIngr.Text.Equals(""))
+                {
+                    novaReceita novaReceita = new novaReceita();
+                    novaReceita.Nome = txtReceita.Text;
+                    novaReceita.Ingredientes = txtIngr.Text;
 
-                string conexaoBD = $"server={servidor}; user id={usuario}; database={db}; password={senha}";
-
-                lbl1.Text = "conexão ok";
+                    if (novaReceita.addReceita())
+                    {
+                        MessageBox.Show($"A receita {novaReceita.Nome} foi adicionada com sucesso!");
+                        txtReceita.Clear();
+                        txtIngr.Clear();
+                        txtReceita.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Não foi possivel adicionar a receita");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Preencha todos os campos");
+                }
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
-                MessageBox.Show("Erro"+ex.Message);
+                MessageBox.Show("Não foi possivel adicionar"+ex.Message);
             }
+
         }
     }
 }
