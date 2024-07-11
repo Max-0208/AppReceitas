@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AppReceitas
 {
-    internal class novaReceita
+    internal class NovaReceita
     {
         private int id;
         private string nome;
